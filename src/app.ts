@@ -1,7 +1,6 @@
 import express from 'express'
 import cors from 'cors'
 import randomRouter from './routes/random';
-import ServerlessHttp from 'serverless-http';
 
 const app = express();
 
@@ -14,4 +13,4 @@ app.get('/hello', (_, res) => {
 })
 app.use('/random', randomRouter)
 
-export default ServerlessHttp(app)
+export default app;

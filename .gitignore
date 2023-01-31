@@ -1,8 +1,9 @@
 # deployment
 node_modules
 dist/
-.serverless
+.aws-sam
 
 # development
 .dev.*
 .dev/
+dist.local/
