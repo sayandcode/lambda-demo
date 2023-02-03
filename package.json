@@ -2,11 +2,14 @@
   "name": "lambda-demo",
   "version": "1.0.0",
   "scripts": {
-    "dev": "nodemon",
-    "build:prod": "bash/build-prod.sh",
+    "ci": "bash bash/ci.sh",
+    "rm": "bash bash/rm.sh",
+    "dev": "nodemon src/index.local.ts",
+    "build:prod": "bash bash/build-prod.sh",
     "build": "rimraf dist.local/ && tsc --outDir dist.local/",
     "start": "node dist.local/index.local.js",
-    "deploy": "yarn build:prod && sam deploy"
+    "deploy": "bash bash/deploy.sh",
+    "undeploy": "bash bash/undeploy.sh"
   },
   "license": "MIT",
   "devDependencies": {
@@ -16,8 +19,6 @@
     "@vercel/ncc": "^0.36.1",
     "nodemon": "^2.0.20",
     "rimraf": "^4.1.2",
-    "serverless": "^3.26.0",
-    "serverless-offline": "^12.0.4",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.4"
   },

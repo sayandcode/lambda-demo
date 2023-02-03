@@ -1,3 +1,5 @@
-rimraf dist/
-yarn ncc build src/index.lambda.ts -m -o dist
-sam build
+#!/bin/bash
+
+OUT_DIR="dist"
+yarn rimraf $OUT_DIR
+yarn ncc build src/index.lambda.ts -m -o $OUT_DIR
