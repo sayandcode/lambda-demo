@@ -4,5 +4,5 @@
 set -e
 export $(grep -v '^#' .env | xargs)
 
-cd cdk/
-yarn undeploy
+cd cdk
+yarn diff

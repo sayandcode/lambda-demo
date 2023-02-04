@@ -4,11 +4,12 @@
   "scripts": {
     "ci": "bash bash/ci.sh",
     "rm": "bash bash/rm.sh",
-    "dev": "nodemon src/index.local.ts",
+    "dev": "env-cmd nodemon src/index.local.ts",
     "build:prod": "bash bash/build-prod.sh",
     "build": "rimraf dist.local/ && tsc --outDir dist.local/",
-    "start": "node dist.local/index.local.js",
+    "start": "env-cmd node dist.local/index.local.js",
     "deploy": "bash bash/deploy.sh",
+    "deploy:diff": "bash bash/diff.sh",
     "undeploy": "bash bash/undeploy.sh"
   },
   "license": "MIT",
@@ -24,7 +25,9 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "env-cmd": "^10.1.0",
     "express": "^4.18.2",
+    "ioredis": "^5.3.0",
     "serverless-http": "^3.1.1"
   }
 }

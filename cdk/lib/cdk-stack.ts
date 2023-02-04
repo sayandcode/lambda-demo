@@ -2,6 +2,7 @@ import { Stack, StackProps, CfnOutput } from 'aws-cdk-lib';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as path from 'node:path';
 import { Construct } from 'constructs';
+import getEnv from '../utils/getEnv';
 
 export class CdkStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -13,6 +14,7 @@ export class CdkStack extends Stack {
       runtime: lambda.Runtime.NODEJS_16_X,
       code: lambda.Code.fromAsset(codeLocalUri),
       handler: 'index.handler',
+      environment: getEnv(),
     })
 
     const backendUrl = backendLambda.addFunctionUrl({

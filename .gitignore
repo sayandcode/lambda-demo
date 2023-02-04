@@ -1,7 +1,7 @@
 # deployment
 node_modules
 dist/
-.aws-sam
+.env
 
 # development
 .dev.*
