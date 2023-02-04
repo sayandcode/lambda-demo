@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 OUT_DIR="dist"
 yarn rimraf $OUT_DIR

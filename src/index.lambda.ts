@@ -1,8 +1,7 @@
 import ServerlessHttp from 'serverless-http';
 import app from './app'
 
-export default (event: Object, context: Object) => {
-  console.log({ event, context })
+export const handler = (event: Object, context: Object) => {
   const serverlessInstance = ServerlessHttp(app)
   return serverlessInstance(event, context)
 }
