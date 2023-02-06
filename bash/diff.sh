@@ -5,6 +5,6 @@ set -e
 export $(grep -v '^#' .env | xargs)
 
 yarn build:prod
-cd cdk/
-yarn deploy
+cd cdk
+yarn diff
 
